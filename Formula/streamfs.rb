@@ -1,33 +1,28 @@
-# Homebrew formula for StreamFS
-# Install: brew install deftcomputing/tap/streamfs
-# Or:      brew tap deftcomputing/tap && brew install streamfs
-
 class Streamfs < Formula
   desc "Cloud file streaming for media workflows — mount S3 as a local filesystem"
   homepage "https://streamfs.io"
-  version "0.2.0"
-  license :cannot_represent  # Proprietary — see https://streamfs.io/terms
+  version "0.3.0"
+  license :cannot_represent
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/deftcomputing/streamfs/releases/download/v#{version}/streamfs-darwin-aarch64"
-      sha256 "PLACEHOLDER_ARM64_SHA256"
+      sha256 "2b9ed9529b29def0769c34150a298340941dc0fc1094ab68420f06ab2a7ed6af"
     else
       url "https://github.com/deftcomputing/streamfs/releases/download/v#{version}/streamfs-darwin-x86_64"
-      sha256 "PLACEHOLDER_X86_64_SHA256"
+      sha256 "6d3365b6f214336f5738f4c32719367320fe8cfc61e16497d0e55f8ee1c29b5f"
     end
   end
 
   on_linux do
     url "https://github.com/deftcomputing/streamfs/releases/download/v#{version}/streamfs-linux-x86_64"
-    sha256 "PLACEHOLDER_LINUX_SHA256"
+    sha256 "113a4187e6e9ba97b78913a1e4d7ca51519f4ebf15f5c53c9d98c653967bf223"
 
     depends_on "libfuse" => :recommended
   end
 
   def install
-    binary = Dir["*"].first || "streamfs"
-    bin.install binary => "streamfs"
+    bin.install Dir["*"].first => "streamfs"
   end
 
   def caveats
@@ -37,7 +32,7 @@ class Streamfs < Formula
         2. streamfs mount -w <workspace-name>
 
       Configuration: ~/.streamfs/config.toml
-      Documentation: https://streamfs.io/app/download
+      Documentation: https://streamfs.io
     EOS
   end
 
