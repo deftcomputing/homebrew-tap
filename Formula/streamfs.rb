@@ -1,22 +1,22 @@
 class Streamfs < Formula
   desc "Cloud file streaming for media workflows — mount S3 as a local filesystem"
   homepage "https://streamfs.io"
-  version "0.3.0"
+  version "0.6.0"
   license :cannot_represent
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://releases.streamfs.io/v0.3.0/streamfs-darwin-aarch64?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
-      sha256 "2b9ed9529b29def0769c34150a298340941dc0fc1094ab68420f06ab2a7ed6af"
+      url "https://releases.streamfs.io/v0.6.0/streamfs-darwin-aarch64/streamfs?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
+      sha256 "896a026967e627868f0a7ef0f7df62356039dc63586f8fac487f7264f6d34644"
     else
-      url "https://releases.streamfs.io/v0.3.0/streamfs-darwin-x86_64?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
-      sha256 "6d3365b6f214336f5738f4c32719367320fe8cfc61e16497d0e55f8ee1c29b5f"
+      url "https://releases.streamfs.io/v0.6.0/streamfs-darwin-x86_64/streamfs?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
+      sha256 "3ef3f278e58d63a9b8f05120463337701e5bcc16fb49920a59439889f37988ba"
     end
   end
 
   on_linux do
-    url "https://releases.streamfs.io/v0.3.0/streamfs-linux-x86_64?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
-    sha256 "113a4187e6e9ba97b78913a1e4d7ca51519f4ebf15f5c53c9d98c653967bf223"
+    url "https://releases.streamfs.io/v0.6.0/streamfs-linux-x86_64/streamfs?token=bb48440012674fb7553a7cf529407922bcb036ef7a8e659d3cbe6246c5cab2fb"
+    sha256 "c245e32c2f5753144dcc76d915368b92ff0970a043c47bbe846092c30ddc6efa"
 
     depends_on "libfuse" => :recommended
   end
